@@ -1,3 +1,3 @@
-export * as randomPerson from "./person";
-export * as randomEmail from "./email";
-export * as randomPhoneNumber from "./phone";
+export * from "./person";
+export * from "./email";
+export * from "./phone";

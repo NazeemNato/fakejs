@@ -1,1 +1,1 @@
-export * as person from "./fake/person";
+export * from "./fake/person";

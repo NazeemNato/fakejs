@@ -8,7 +8,7 @@ export default function randomPerson(): person {
     // genereate random phone number
     const phone = randomPhoneNumber()
     // generate random gender
-    const gender = Math.random() > 0.5 ? "M" : "F"
+    const gender = Math.random() > 0.5 ? "F" : "M"
     // generate first name and lastname
     const firstName = name[gender].firstname[Math.floor(Math.random() * name[gender].firstname.length)]
     const lastName = name.lastname[Math.floor(Math.random() * name.lastname.length)]
