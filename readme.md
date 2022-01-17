@@ -1,6 +1,6 @@
 # FakeJS
 
-[![npm-version]][npm]
+![npm bundle size](https://img.shields.io/bundlephobia/min/@n4ze3m/fakejs)
 
 Random data generator for JavaScript.
 
@@ -51,7 +51,7 @@ output:
       age: 25,
       gender: "M",
       phone: "+1-123-456-7890",
-      email: "john.doe@yahoo.com"
+      email: "john.doe@yahoo.com",
       address: {
        address: "123 Main Lorem Ipsum St, Alappuzha, Kerala, 688888, Estonia",
        street: "123 Main Lorem Ipsum St",
