@@ -2,7 +2,21 @@ import { emailInput } from "./types";
 import provider from "./data/email";
 import extension from "./data/extension";
 
-export default function randomEmail(input: emailInput): string {
+/**
+ * generate random email address from first name and last name or some random email address
+ * @param input 
+ * @returns string
+ * 
+ * @example
+ * randomEmail({
+ * firstName: "John",
+ * lastName: "Doe",
+ * provider: "gmail",
+ * extension: "com"
+ * })
+ * // => john.doe@gmail.com
+ */
+export function randomEmail(input: emailInput): string {
     let email: string;
     // check if firstName is provided
     if (input.firstName) {

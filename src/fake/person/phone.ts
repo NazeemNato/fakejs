@@ -1,6 +1,12 @@
-/// generate random phone number
-/// @returns {string} phone number
-export default function randomPhoneNumber(): string {
+/**
+ * generate random phone number
+ * @returns string
+ * 
+ * @example
+ * randomPhoneNumber()
+ * // => +1-123-456-7890
+ */
+export function randomPhoneNumber(): string {
        // generating random phone number 10 digits
        const phone = Math.floor(Math.random() * 10000000000).toString();
        // formatting phone number adding country code to it

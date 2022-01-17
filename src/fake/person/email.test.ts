@@ -1,4 +1,4 @@
-import randomEmail from './email';
+import { randomEmail } from './email';
 
 test('email test #1 input', () => {
     expect(randomEmail({

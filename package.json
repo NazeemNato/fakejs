@@ -8,7 +8,8 @@
     "/dist"
   ],
   "scripts": {
-    "build": "tsc -p ./tsconfig.json",
+    "prebuild": "rimraf dist",
+    "build": "tsc",
     "test": "jest --coverage"
   },
   "repository": {
@@ -48,5 +49,8 @@
       "tsx",
       "js"
     ]
+  },
+  "dependencies": {
+    "rimraf": "^3.0.2"
   }
 }
