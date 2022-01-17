@@ -16,7 +16,9 @@ using yarn:
 
 ## Supported fake data types
 
-1. `person`: Generates a random personal data.
+* `person`: Generates a random 
+personal data.
+   - randomName()
    - randomPerson()
    - randomEmail()
    - randomPhone()
@@ -67,8 +69,13 @@ output:
 }
 ```
 
-## Credit
+## Data Credit
 
-- name data from faker@5.5.3
+- `name` data from faker@5.5.3
 
-- address data from [gofakeit](https://github.com/brianvoe/gofakeit)
+- `address` data from [gofakeit](https://github.com/brianvoe/gofakeit)
+
+# Contributing
+
+Please feel free to open an issue or create a pull request.
+

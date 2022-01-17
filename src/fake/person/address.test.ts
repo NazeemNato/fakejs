@@ -11,12 +11,12 @@ test("address test #1 random", () => {
     expect(randomZipCode()).toMatch(zipCodeRegex);
 })
 
-test("latitude test #1",() => {
+test("latitude test #1", () => {
     const latitudeRegex = /^[-]?[0-9]{1,2}.[0-9]{6}$/;
     expect(randomLatitude()).toMatch(latitudeRegex);
 })
 
-test("longitude test #1",() => {
+test("longitude test #1", () => {
     const longitudeRegex = /^[-]?[0-9]{1,3}.[0-9]{6}$/;
     expect(randomLongitude()).toMatch(longitudeRegex);
 })
@@ -42,7 +42,9 @@ test("address test #1", () => {
         state: "Kerala",
         zip: "688888",
         country: "Estonia",
-        latitude: "-19.98888",
-        longitude: "6.98888",
+        coordinates: {
+            latitude: "-19.98888",
+            longitude: "6.98888",
+        }
     });
 })

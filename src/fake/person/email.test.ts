@@ -1,4 +1,4 @@
-import { randomEmail } from './email';
+import {randomEmail} from './email';
 
 test('email test #1 input', () => {
     expect(randomEmail({
@@ -11,4 +11,11 @@ test('email test #1 input', () => {
 
 test('email test #2 random email', () => {
     expect(randomEmail({})).toMatch(/^[a-z]+\.?[a-z]+@[a-z]+\.?[a-z]+\.?[a-z]+$/);
+})
+
+test('email test #2 random email with provider and extension', () => {
+    expect(randomEmail({
+        provider:"buckthorn",
+        extension:"com"
+    })).toMatch(/^[a-z]+\.?[a-z]+@buckthorn+\.?com+$/);
 })

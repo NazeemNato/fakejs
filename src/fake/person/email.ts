@@ -1,6 +1,7 @@
 import { emailInput } from "./types";
 import provider from "./data/email";
 import extension from "./data/extension";
+import { randomName } from ".";
 
 /**
  * generate random email address from first name and last name or some random email address
@@ -23,6 +24,7 @@ export function randomEmail(input: emailInput): string {
         email = input.firstName.toLowerCase();
     } else {
         // generate random first name
+        email = randomName().firstName.toLowerCase();
     }
     // check if lastName is provided
     if (input.lastName) {

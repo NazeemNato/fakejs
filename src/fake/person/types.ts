@@ -1,8 +1,8 @@
 /**
  * person type
- * @typedef {Object} person
+ * @typedef {Object} Person
  */
-export type person = {
+export type Person = {
     /**
      * unique id
      */
@@ -196,4 +196,15 @@ export type addressType = {
     country?: string;
     latitude?: string;
     longitude?: string;
+}
+
+export enum Gender {
+    Male = "M",
+    Female = "F"
+}
+
+export type BasicInfo  = {
+    firstName: string;
+    lastName: string;
+    gender: string
 }

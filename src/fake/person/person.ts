@@ -4,7 +4,7 @@ import {
 import { randomPhoneNumber } from "./phone";
 import name from "./data/name";
 import { createHash } from "crypto";
-import { person } from "./types";
+import { BasicInfo, Person } from "./types";
 import { randomAddress } from "./address";
 
 /**
@@ -35,14 +35,15 @@ import { randomAddress } from "./address";
  * //     }
  * // }
  */
-export function randomPerson(): person {
+export function randomPerson(): Person {
     // genereate random phone number
     const phone = randomPhoneNumber()
     // generate random gender
-    const gender = Math.random() > 0.5 ? "F" : "M"
-    // generate first name and lastname
-    const firstName = name[gender].firstname[Math.floor(Math.random() * name[gender].firstname.length)]
-    const lastName = name.lastname[Math.floor(Math.random() * name.lastname.length)]
+    const {
+        gender,
+        firstName,
+        lastName
+    } = randomName()
     // generate random email address from first name and last name
     const email = randomEmail({
         firstName,
@@ -70,5 +71,76 @@ export function randomPerson(): person {
             date
         },
         address,
+    }
+}
+
+/**
+ * random name generator
+ * 
+ * @param gender: number 0,1 (optional)
+ * @example
+ * randomName(0)
+ * // => {
+ * // firstName: "John",
+ * // lastName: "Doe",
+ * // gender: "M"
+ * //}
+ * 
+ * randomName(1)
+ * // => {
+ * // firstName: "Mary",
+ * // lastName: "Doe",
+ * // gender: "F"
+ * //}
+  * randomName()
+ * // => {
+ * // firstName: "Mark",
+ * // lastName: "Oliver",
+ * // gender: "M"
+ * //}
+ */
+export function randomName(gender?: number): BasicInfo {
+    // check gender not null
+    if (gender !== null) {
+        // check gender is 0
+        if (gender === 0) {
+            const firstName = name["M"].firstname[Math.floor(Math.random() * name["M"].firstname.length)]
+            const lastName = name.lastname[Math.floor(Math.random() * name.lastname.length)]
+            return {
+                firstName,
+                lastName,
+                gender: "M"
+            }
+        // check if gender is 1
+        } else if (gender === 1) {
+            const firstName = name["F"].firstname[Math.floor(Math.random() * name["F"].firstname.length)]
+            const lastName = name.lastname[Math.floor(Math.random() * name.lastname.length)]
+            return {
+                firstName,
+                lastName,
+                gender: "F"
+            }
+        // if not 0 or 1 then random  gender
+        } else {
+            const gender = Math.random() > 0.5 ? "F" : "M"
+            const firstName = name[gender].firstname[Math.floor(Math.random() * name[gender].firstname.length)]
+            const lastName = name.lastname[Math.floor(Math.random() * name.lastname.length)]
+            return {
+                firstName,
+                lastName,
+                gender
+            }
+        }
+    // if no gender then random
+    } else {
+        const gender = Math.random() > 0.5 ? "F" : "M"
+        // generate first name and lastname
+        const firstName = name[gender].firstname[Math.floor(Math.random() * name[gender].firstname.length)]
+        const lastName = name.lastname[Math.floor(Math.random() * name.lastname.length)]
+        return {
+            firstName,
+            lastName,
+            gender
+        }
     }
 }
